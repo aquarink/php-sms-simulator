@@ -28,11 +28,11 @@ if (!empty($_GET)) {
 
             // SEND to DR
             //$host = 'http://122.248.32.27:3000/dr/xl';
-            $host = 'http://localhost:3000/dr/xl?';
+            //$host = 'http://localhost:3000/dr/xl?';
 
-            $options = array("msisdn" => $idMsisdn, "trxid" => $trxId, "trxdate" => $now, "shortcode" => 912345, "stat" => 2);
-            $host .= http_build_query($options, '', '&');
-            $myData = file_get_contents("$host");
+            //$options = array("msisdn" => $idMsisdn, "trxid" => $trxId, "trxdate" => $now, "shortcode" => 912345, "stat" => 2);
+            //$host .= http_build_query($options, '', '&');
+            //$myData = file_get_contents("$host");
         }
     }
 }
