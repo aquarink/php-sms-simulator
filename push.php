@@ -2,7 +2,7 @@
 
 if (!empty($_GET)) {
 
-    if ($_GET['username'] == 'admin' && $_GET['password'] == 'admin') {
+    if ($_GET['username'] == 'adminDB' && $_GET['password'] == 'passwordDb') {
 
         $msisdn = $_GET['msisdn'];
         $trxId = $_GET['trxid'];
@@ -22,17 +22,18 @@ if (!empty($_GET)) {
         if ($save) {
             if (empty($trxId)) {
                 echo 'ID-' . $random;
+                $trxId = 'ID-' . $random;
             } else {
                 echo 'ok';
             }
 
             // SEND to DR
-            //$host = 'http://122.248.32.27:3000/dr/xl';
-            //$host = 'http://localhost:3000/dr/xl?';
+            //$host = 'http://122.248.32.27:3000/dr/xl?';
+            $host = 'http://localhost:3000/dr/xl?';
 
-            //$options = array("msisdn" => $idMsisdn, "trxid" => $trxId, "trxdate" => $now, "shortcode" => 912345, "stat" => 2);
-            //$host .= http_build_query($options, '', '&');
-            //$myData = file_get_contents("$host");
+            $options = array("msisdn" => $idMsisdn, "trxid" => $trxId, "trxdate" => $now, "shortcode" => 912345, "stat" => 2);
+            $host .= http_build_query($options, '', '&');
+            $myData = file_get_contents("$host");
         }
     }
 }
